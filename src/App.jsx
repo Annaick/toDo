@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { nanoid } from 'nanoid'
-import {MoreOutlined, DeleteOutlined, PlusOutlined, EditOutlined, BoxPlotOutlined, TabletFilled} from '@ant-design/icons'
-import { Button, Dropdown, Space, Form, Menu, List, ConfigProvider, Input, Row, Col, Checkbox, Typography, message, Popconfirm} from 'antd'
+import {MoreOutlined, DeleteOutlined, EditOutlined} from '@ant-design/icons'
+import { Button, Dropdown, Form, List, ConfigProvider, Input, Row, Col, Checkbox, Typography, message, Popconfirm} from 'antd'
 import './App.css'
-//<Button className='dashboard__btn btn' shape='default' icon={<MenuOutlined style={{color: "#FFFFFF"}}></MenuOutlined>}></Button>
 
 if (localStorage.getItem ('tasks') == null){
   localStorage.setItem ('tasks', JSON.stringify([]))
