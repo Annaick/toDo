@@ -2,7 +2,8 @@
 **Project Description**   
 This is my web application project built with [React](https://reactjs.org/) and [Ant Design](https://ant.design) UI library to manage tasks and store them within web storage `localStorage` API  
   
->  Preview it [here](#preview)  
+>  Preview it [here](https://Annaick.github.io/toDo)
+  
 ## Table of contents 
 - [Overview](#overview)
     - [Screenshot](#screenshot)
