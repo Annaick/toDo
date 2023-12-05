@@ -92,3 +92,17 @@ body{
         color: white;
     }
 }
+
+footer{
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    color: rgb(117, 112, 112);
+    column-gap: 10px;
+    width: 100%;
+    p{
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}

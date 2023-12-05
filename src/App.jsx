@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { nanoid } from 'nanoid'
-import {MoreOutlined, DeleteOutlined, EditOutlined} from '@ant-design/icons'
+import {MoreOutlined, DeleteOutlined, EditOutlined, GithubFilled} from '@ant-design/icons'
 import { Button, Dropdown, Form, List, ConfigProvider, Input, Row, Col, Checkbox, Typography, message, Popconfirm} from 'antd'
 import './App.css'
 
@@ -28,14 +28,14 @@ function App() {
   const [editTaskName, setEditTaskName] = useState('')
   const [newTaskName, setNewTaskName] = useState('')
   const [tasks, setTasks] = useState([...data])
-  let ref = useRef(null); const input = ref.current
+  let ref = useRef(null)
   useEffect (()=>{localStorage.setItem ("tasks", JSON.stringify(tasks))}, [tasks])
 
   function addTask(){
     try{
       let newTask = {name: newTaskName, id: nanoid(), completed: false}
       setTasks([newTask, ...tasks])
-      setNewTaskName('')    
+      setNewTaskName ('')   
       success ('New task added')
     }catch(e){
       error (e)
@@ -125,9 +125,9 @@ function App() {
                     </Dropdown>
                   </Col>
                 </Row>
-                <Form layout='inline' style={{width: '100%', display: 'flex', justifyContent: 'center', rowGap: '10px'}} onFinish={()=> {addTask()}}> 
-                  <Form.Item validateTrigger={['onBlur', 'onChange']} rules={[{required: true, message: 'No empty value'}]}>
-                    <Input allowClear name='task_name' placeholder='Task name' required style={{backgroundColor: 'rgb(20, 22, 29)'}} ref={ref} onChange={(e)=> setNewTaskName(e.target.value)}></Input>
+                <Form ref={ref} layout='inline' style={{width: '100%', display: 'flex', justifyContent: 'center', rowGap: '10px'}} onFinish={()=> {addTask()}} onBlur={()=> setNewTaskName('')}> 
+                  <Form.Item validateTrigger={['onBlur', 'onChange']} rules={[{required: true, message: 'No empty value'}]} >
+                    <Input allowClear name='task_name' placeholder='Task name' required style={{backgroundColor: 'rgb(20, 22, 29)'}} onChange={(e)=> setNewTaskName(e.target.value)} value={newTaskName} ></Input>
                   </Form.Item>
 
                   <Form.Item>
@@ -155,8 +155,13 @@ function App() {
                 )}>
                 </List>
               </main>
+
             </section>
           </ConfigProvider>
+          <footer>
+                 <GithubFilled></GithubFilled> 
+                <p>View Source Code <a href="https://github.com/Annaick/toDo" rel='noopener norefer'>here</a></p>
+          </footer>
       </div>
     </>
   )
