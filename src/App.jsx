@@ -125,7 +125,7 @@ function App() {
                     </Dropdown>
                   </Col>
                 </Row>
-                <Form ref={ref} layout='inline' style={{width: '100%', display: 'flex', justifyContent: 'center', rowGap: '10px'}} onFinish={()=> {addTask()}} onBlur={()=> setNewTaskName('')}> 
+                <Form ref={ref} layout='inline' style={{width: '100%', display: 'flex', justifyContent: 'center', rowGap: '10px'}} onFinish={()=> {addTask()}}> 
                   <Form.Item validateTrigger={['onBlur', 'onChange']} rules={[{required: true, message: 'No empty value'}]} >
                     <Input allowClear name='task_name' placeholder='Task name' required style={{backgroundColor: 'rgb(20, 22, 29)'}} onChange={(e)=> setNewTaskName(e.target.value)} value={newTaskName} ></Input>
                   </Form.Item>
