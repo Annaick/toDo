@@ -13,7 +13,7 @@ This is todo app project to manage tasks built with [React](https://reactjs.org/
 - [Aknwolegments](#acknowledgments)
 ----  
 ## Overview  
-The application intervace is simple to make it easy to use, users can add, modify and delete tasks and above all mark them when they're commpleted
+The application interface is simple to make it easy to use, users can add, modify and delete tasks and above all mark them when they're commpleted
 ### Screenshot
 <img src='public/desktop-pic.png' alt='desktop' width='300px' />
 
